@@ -8,6 +8,7 @@
 #include <fstream>
 #include <limits>
 #include <filesystem>
+#include <regex>
 namespace fs = std::filesystem;
 
 struct BMP_header
@@ -135,10 +136,11 @@ void main(int argc, char* argv[])
         //batch processing for all files found
         std::string path("./");
         std::string ext(".bmp");
-
+        std::regex pat{ "negative" };
         for (auto& p : fs::recursive_directory_iterator(path))
         {
-            if (p.path().extension() == ext) {
+            if (!regex_search(p.path().stem().string(),pat) && p.path().extension() == ext) {
+
                 info((p.path().stem().string() + ext).data());
                 convertToNegativeImage((p.path().stem().string() + ext).data());
             }
