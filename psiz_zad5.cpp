@@ -122,10 +122,15 @@ void convertToNegativeImage(const char* file) {
 void main(int argc, char* argv[])
 {
     const char* file;
-
+    if (argv[1] != nullptr) {
+        file = argv[1];
+        info(file);
+        convertToNegativeImage(file);
+    }
+    else {
+        std::cout <<"no file..";
+    }
     
-    info(file);
-    convertToNegativeImage(file);
 }
 
 
