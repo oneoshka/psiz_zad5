@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "psiz_zad5", "psiz_zad5.vcxproj", "{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Debug|x64.ActiveCfg = Debug|x64
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Debug|x64.Build.0 = Debug|x64
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Debug|x86.ActiveCfg = Debug|Win32
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Debug|x86.Build.0 = Debug|Win32
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Release|x64.ActiveCfg = Release|x64
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Release|x64.Build.0 = Release|x64
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Release|x86.ActiveCfg = Release|Win32
+		{F3052671-E2BB-4B48-B4D0-6B6EAC5B3154}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2EA2922D-E8A0-4DCF-B1C8-C7C33CCE3CB1}
+	EndGlobalSection
+EndGlobal
