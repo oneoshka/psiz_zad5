@@ -8,6 +8,7 @@
 #include <fstream>
 #include <limits>
 #include <filesystem>
+namespace fs = std::filesystem;
 
 struct BMP_header
 {
@@ -103,7 +104,7 @@ void convertToNegativeImage(const char* file) {
         fwrite(&header_dib, sizeof(struct DIB_header), 1, newFile);
 
         //credits: https://github.com/drinzmz/bmp/blob/main/bmp/main.cpp
-
+        std::cout << "\n Converting... Wait...";
         int bmpImg;
         for (int i = header_bmp.offset; i < header_bmp.size; i++)
         {
@@ -116,19 +117,33 @@ void convertToNegativeImage(const char* file) {
 
         std::fclose(origFile);
         std::fclose(newFile);
+        std::cout << "\n Conversion successfull! Check out: " << newFileName << "\n";
+
     }
 }
 
 void main(int argc, char* argv[])
 {
     const char* file;
+
     if (argv[1] != nullptr) {
         file = argv[1];
         info(file);
         convertToNegativeImage(file);
     }
     else {
-        std::cout <<"no file..";
+        //batch processing for all files found
+        std::string path("./");
+        std::string ext(".bmp");
+
+        for (auto& p : fs::recursive_directory_iterator(path))
+        {
+            if (p.path().extension() == ext) {
+                info((p.path().stem().string() + ext).data());
+                convertToNegativeImage((p.path().stem().string() + ext).data());
+            }
+                
+        }
     }
     
 }
